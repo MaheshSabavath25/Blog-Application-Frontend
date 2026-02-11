@@ -368,7 +368,7 @@ const AllPosts = () => {
           {post.imageName && (
             <div className="post-image">
               <img
-                src={`http://localhost:8080/api/posts/image/${post.imageName}`}
+                src={`https://blog-application-backend-4si6.onrender.com/api/posts/image/${post.imageName}`}
                 alt="post"
               />
             </div>

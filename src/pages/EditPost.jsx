@@ -74,7 +74,7 @@ const EditPost = () => {
       {imageName && (
         <img
           className="edit-post-image"
-          src={`http://localhost:8080/api/posts/image/${imageName}`}
+          src={`https://blog-application-backend-4si6.onrender.com/api/posts/image/${imageName}`}
           alt="post"
         />
       )}

@@ -43,7 +43,7 @@ const TagPosts = () => {
         <div key={post.id} className="tag-post-card">
           {post.imageName && (
             <img
-              src={`http://localhost:8080/api/posts/image/${post.imageName}`}
+              src={`https://blog-application-backend-4si6.onrender.com/api/posts/image/${imageName}`}
               alt="post"
             />
           )}
