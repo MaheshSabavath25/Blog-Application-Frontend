@@ -1,0 +1,281 @@
+/* ================= PAGE ================= */
+
+.post-page {
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* ================= POST CARD ================= */
+
+.post-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ================= IMAGE ================= */
+
+.image-wrapper {
+  position: relative;
+}
+
+/* 🔥 IMAGE CONTROLS HEIGHT – NO CROP */
+.image-wrapper img {
+  width: 100%;
+  height: auto;          /* IMPORTANT */
+  display: block;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ================= ACTIONS ================= */
+
+.post-actions {
+  display: flex;
+  gap: 20px;
+  padding: 14px 18px;
+  font-size: 15px;
+}
+
+.post-actions span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.liked {
+  color: #e53935;
+}
+
+/* ================= CONTENT ================= */
+
+.post-card h4 {
+  padding: 0 18px;
+  margin: 10px 0 6px;
+  font-size: 20px;
+}
+
+.post-content {
+  padding: 0 18px;
+  color: #444;
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+/* ================= COMMENTS ================= */
+
+.comments-section {
+  padding: 12px 18px;
+}
+
+/* ================= COMMENT ================= */
+
+.comment {
+  background: #f8f9fc;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.comment.reply {
+  margin-left: 28px;
+  background: #eef1f8;
+}
+
+/* ================= COMMENT HEADER ================= */
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-header b {
+  font-size: 14px;
+}
+
+/* ================= HOVER EDIT / DELETE ================= */
+
+.hover-actions {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.comment:hover .hover-actions {
+  opacity: 1;
+}
+
+.hover-actions svg {
+  margin-left: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #666;
+}
+
+.hover-actions svg:last-child:hover {
+  color: #e53935;
+}
+
+/* ================= COMMENT ACTIONS ================= */
+
+.comment-actions {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #666;
+}
+
+/* ================= EDIT BOX ================= */
+
+.edit-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.edit-box input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.edit-box button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* ================= ADD COMMENT ================= */
+
+.add-comment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-top: 1px solid #eee;
+}
+
+.add-comment input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.add-comment button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ================= EMOJI PICKER ================= */
+
+.emoji-wrapper {
+  position: absolute;
+  bottom: 64px;
+  left: 18px;
+  z-index: 20;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= REPLY ================= */
+
+.reply-box {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.reply-box input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 18px;
+  border: 1px solid #ccc;
+}
+
+.reply-box button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.reply-emoji {
+  bottom: 48px;
+}
+
+/* ================= HASHTAG ================= */
+
+.hashtag {
+  color: #1976d2;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+  .post-card {
+    border-radius: 0;
+  }
+
+  .comment.reply {
+    margin-left: 18px;
+  }
+
+  .post-card h4 {
+    font-size: 18px;
+  }
+}
+
+
+.comment-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-time {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}

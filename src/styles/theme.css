@@ -1,0 +1,68 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  /* Light mode */
+  --bg-page: #f4f6f8;
+  --bg-surface: #ffffff;
+  --border-color: #e5e7eb;
+
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  --bg-page: #020617;
+  --bg-surface: #0f172a;
+  --border-color: #1e293b;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5f5;
+  --text-muted: #94a3b8;
+
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+}
+
+/* ================= GLOBAL BASE ================= */
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Arial, sans-serif;
+}
+
+/* ================= COMMON ELEMENTS ================= */
+a {
+  color: var(--accent);
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ================= SURFACE (cards, pages) ================= */
+.page,
+.dashboard,
+.post-card,
+.comment-card,
+.comment-modal {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+/* ================= TEXT ================= */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}

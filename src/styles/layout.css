@@ -1,0 +1,18 @@
+/* ===== PAGE WRAPPER ===== */
+.page {
+  min-height: calc(100vh - 60px); /* below navbar */
+  padding: 24px 20px;
+  background-color: #f4f6f8;
+}
+
+/* ===== CENTER CONTENT ===== */
+.page > * {
+  margin: 0 auto;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .page {
+    padding: 16px 12px;
+  }
+}

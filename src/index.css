@@ -1,0 +1,108 @@
+/* ===================== AUTH (LOGIN / REGISTER) ===================== */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+}
+
+.dark .auth-container {
+  background: linear-gradient(135deg, #121212, #1c1c1c);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.dark .auth-card {
+  background: #1f1f1f;
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.05);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+.auth-card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.auth-card input:focus {
+  border-color: #1976d2;
+}
+
+.dark .auth-card input {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: white;
+}
+
+.dark .auth-card input::placeholder {
+  color: #aaa;
+}
+
+/* BUTTON */
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.auth-card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(25, 118, 210, 0.4);
+}
+
+/* SWITCH LINK */
+.auth-switch {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-switch span {
+  color: #1976d2;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-switch span:hover {
+  text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

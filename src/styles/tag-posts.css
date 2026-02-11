@@ -1,0 +1,119 @@
+/* ================= PAGE ================= */
+
+.tag-posts {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1976d2;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* ================= TITLE ================= */
+
+.tag-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty {
+  color: #666;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* ================= POST CARD ================= */
+
+.tag-post-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 14px 16px 18px;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tag-post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= IMAGE CONTAINER ================= */
+
+/* IMAGE CONTAINER – SAME AS ALL POSTS */
+.tag-post-card img {
+  width: 100%;          /* FULL CARD WIDTH */
+  height: auto;         /* IMAGE DECIDES HEIGHT */
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  object-fit: contain;  /* NO CROPPING */
+  background: #f1f3f6;
+}
+
+
+/* ================= CONTENT ================= */
+
+.tag-post-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.tag-post-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* ================= VIEW BUTTON ================= */
+
+.view-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  color: #1976d2;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  text-decoration: underline;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .tag-posts {
+    padding: 16px 12px 40px;
+  }
+
+  .tag-title {
+    font-size: 20px;
+  }
+
+  .tag-post-card img {
+    max-height: 300px;
+  }
+}

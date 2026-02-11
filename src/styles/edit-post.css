@@ -1,0 +1,81 @@
+/* ===== EDIT POST PAGE ===== */
+.edit-post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+/* ===== TITLE ===== */
+.edit-post h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+/* ===== IMAGE ===== */
+.edit-post-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+/* ===== INPUTS ===== */
+.ep-input,
+.ep-textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+}
+
+/* ===== FILE INPUT ===== */
+.ep-file {
+  margin-bottom: 10px;
+}
+
+/* ===== BUTTON ===== */
+.ep-btn {
+  padding: 8px 16px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+.ep-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ===== HR ===== */
+.edit-post hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .edit-post {
+    padding: 18px 14px;
+  }
+
+  .edit-post h2 {
+    font-size: 20px;
+  }
+}
