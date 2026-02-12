@@ -65,22 +65,23 @@ const EditPost = () => {
 
   return (
     <div className="edit-post">
-      <button
-  className="back-btn"
-  onClick={() => navigate("/myposts")}
->
-  ← Back to My Posts
-</button>
-
-
       <h2>Edit Post</h2>
 
-      {imageName && (
-  <img
-    className="edit-post-image"
-    src={imageName}
-    alt="post"
-  />
+{imageName && (
+  <div className="image-wrapper">
+    <button
+      className="back-btn"
+      onClick={() => navigate("/myposts")}
+    >
+      ←
+    </button>
+
+    <img
+      className="edit-post-image"
+      src={imageName}
+      alt="post"
+    />
+  </div>
 )}
 
 

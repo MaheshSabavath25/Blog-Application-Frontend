@@ -1,21 +1,49 @@
-import { NavLink } from "react-router-dom";
-import { FiHome, FiUser, FiPlusCircle } from "react-icons/fi";
-import "../styles/mobile-nav.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const MobileNav = () => {
+const MobileNav = ({ toggleDarkMode, logout }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className="mobile-nav">
-      <NavLink to="/posts" className="nav-item">
-        <FiHome />
-      </NavLink>
 
-      <NavLink to="/myposts" className="nav-item">
-        <FiUser />
-      </NavLink>
+      <div
+        className={`mobile-item ${isActive("/allposts") ? "active" : ""}`}
+        onClick={() => navigate("/allposts")}
+      >
+        🏠
+      </div>
 
-      <NavLink to="/create" className="nav-item">
-        <FiPlusCircle />
-      </NavLink>
+      <div
+        className={`mobile-item ${isActive("/myposts") ? "active" : ""}`}
+        onClick={() => navigate("/myposts")}
+      >
+        📝
+      </div>
+
+      <div
+        className={`mobile-item ${isActive("/create") ? "active" : ""}`}
+        onClick={() => navigate("/create")}
+      >
+        ➕
+      </div>
+
+      <div
+        className="mobile-item"
+        onClick={toggleDarkMode}
+      >
+        🌙
+      </div>
+
+      <div
+        className="mobile-item logout"
+        onClick={logout}
+      >
+        🔓
+      </div>
+
     </div>
   );
 };

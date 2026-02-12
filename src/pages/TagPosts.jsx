@@ -29,9 +29,6 @@ const TagPosts = () => {
 
   return (
     <div className="tag-posts">
-      <button className="back-btn" onClick={() => navigate(-1)}>
-        ← Back
-      </button>
 
       <h2 className="tag-title">Posts with #{tag}</h2>
 
@@ -41,12 +38,22 @@ const TagPosts = () => {
 
       {posts.map((post) => (
         <div key={post.id} className="tag-post-card">
-          {post.imageName && (
-            <img
-               src={post.imageName}
 
-              alt="post"
-            />
+          {post.imageName && (
+            <div className="image-wrapper">
+              <button
+                className="back-btn"
+                onClick={() => navigate(-1)}
+              >
+                ←
+              </button>
+
+              <img
+                src={post.imageName}
+                alt="post"
+                className="tag-post-image"
+              />
+            </div>
           )}
 
           <h3>{post.title}</h3>
@@ -63,8 +70,10 @@ const TagPosts = () => {
           >
             View Post
           </button>
+
         </div>
       ))}
+
     </div>
   );
 };

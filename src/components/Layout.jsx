@@ -1,10 +1,24 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeProvider";
+
 import Navbar from "./Navbar";
 import MobileNav from "./MobileNav";
-
-import "../styles/layout.css";
 import { Outlet } from "react-router-dom";
+import "../styles/layout.css";
 
 const Layout = () => {
+
+  const { dark, setDark } = useContext(ThemeContext);
+
+  const toggleDarkMode = () => {
+    setDark(!dark);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
+
   return (
     <>
       <Navbar />
@@ -13,7 +27,10 @@ const Layout = () => {
         <Outlet />
       </div>
 
-      <MobileNav />
+      <MobileNav 
+        toggleDarkMode={toggleDarkMode}
+        logout={logout}
+      />
     </>
   );
 };
