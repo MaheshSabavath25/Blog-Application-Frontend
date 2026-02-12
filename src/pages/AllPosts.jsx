@@ -368,7 +368,8 @@ const AllPosts = () => {
           {post.imageName && (
             <div className="post-image">
               <img
-                src={`https://blog-application-backend-4si6.onrender.com/api/posts/image/${post.imageName}`}
+                src={post.imageName}
+
                 alt="post"
               />
             </div>
