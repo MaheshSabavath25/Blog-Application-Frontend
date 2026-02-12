@@ -72,13 +72,13 @@ const EditPost = () => {
       <h2>Edit Post</h2>
 
       {imageName && (
-        <img
-          className="edit-post-image"
-         src={post.imageName}
+  <img
+    className="edit-post-image"
+    src={imageName}
+    alt="post"
+  />
+)}
 
-          alt="post"
-        />
-      )}
 
       <input
         type="file"
