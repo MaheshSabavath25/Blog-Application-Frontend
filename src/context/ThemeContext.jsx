@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 
+
 const ThemeProvider = ({ children }) => {
   const [dark, setDark] = useState(
     localStorage.getItem("theme") === "dark"

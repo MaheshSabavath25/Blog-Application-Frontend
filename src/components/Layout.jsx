@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeProvider";
-
 import Navbar from "./Navbar";
 import MobileNav from "./MobileNav";
 import { Outlet } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import "../styles/layout.css";
 
 const Layout = () => {
