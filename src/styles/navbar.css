@@ -1,118 +1,83 @@
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
-}
+/* ================= NAVBAR ================= */
 
-/* ===== NAVBAR BASE (MOBILE FIRST) ===== */
 .navbar {
-  width: 100%;
-  padding: 14px 16px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  font-family: "Inter", "Segoe UI", sans-serif;
-}
-
-/* ===== SECTIONS ===== */
-.nav-left,
-.nav-right {
-  display: flex;
-  width: 100%;
-  gap: 8px;
-}
-
-/* buttons wrap nicely on mobile */
-.nav-left {
-  flex-wrap: wrap;
-}
-
-.nav-right {
+  align-items: center;
   justify-content: space-between;
+  padding: 14px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-/* ===== BUTTONS ===== */
-.navbar button {
-  flex: 1;
-  padding: 10px 12px;
-  background: #f3f4f6;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1f2937;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
-}
+/* ===== LOGO ===== */
 
-.navbar button:active {
-  transform: scale(0.97);
-}
-
-/* ===== ACCENT BUTTON (LOGOUT) ===== */
-.nav-right button:last-child {
-  background: linear-gradient(135deg, #ff6a6a, #ff4d4d);
-  color: #ffffff;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
   font-weight: 600;
+  color: #222;
 }
 
-/* ===== LIGHT MODE HOVER ===== */
-.navbar button:hover {
-  background: #e0e7ff;
+.logo-icon {
+  font-size: 22px;
+  color: #4f46e5;
 }
 
-/* ===== DARK MODE ===== */
-body.dark .navbar {
-  background: #0f172a;
-  border-bottom: 1px solid #1e293b;
+/* ===== CENTER LINKS ===== */
+
+.nav-links {
+  display: flex;
+  gap: 28px;
 }
 
-body.dark .navbar button {
-  background: #1e293b;
-  color: #e5e7eb;
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: 0.2s ease;
 }
 
-body.dark .navbar button:hover {
-  background: #334155;
+.nav-links a:hover {
+  color: #4f46e5;
 }
 
-body.dark .nav-right button:last-child {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
+/* ===== RIGHT ACTION ICONS ===== */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-/* ===== DESKTOP VIEW ===== */
+.nav-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: #444;
+  transition: 0.2s ease;
+}
+
+.nav-icon:hover {
+  color: #4f46e5;
+}
+
+.logout:hover {
+  color: #ef4444;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Hide mobile nav on desktop */
 @media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* Hide top navbar on mobile */
+@media (max-width: 767px) {
   .navbar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 24px;
-  }
-
-  .nav-left,
-  .nav-right {
-    width: auto;
-  }
-
-  .nav-left {
-    flex-wrap: nowrap;
-  }
-
-  .navbar button {
-    flex: unset;
-    padding: 8px 16px;
-    background: transparent;
-  }
-
-  .navbar button:hover {
-    background: rgba(91, 134, 229, 0.12);
-  }
-
-  body.dark .navbar button:hover {
-    background: rgba(91, 134, 229, 0.25);
+    display: none;
   }
 }

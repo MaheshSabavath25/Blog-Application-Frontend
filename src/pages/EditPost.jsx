@@ -65,9 +65,13 @@ const EditPost = () => {
 
   return (
     <div className="edit-post">
-      <button className="back-btn" onClick={() => navigate(-1)}>
-        ← Back
-      </button>
+      <button
+  className="back-btn"
+  onClick={() => navigate("/myposts")}
+>
+  ← Back to My Posts
+</button>
+
 
       <h2>Edit Post</h2>
 

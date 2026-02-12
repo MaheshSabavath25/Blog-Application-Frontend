@@ -66,3 +66,22 @@
     font-size: 20px;
   }
 }
+
+.file-upload {
+  margin-top: 15px;
+}
+
+.custom-file-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #4a6cf7;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.custom-file-btn:hover {
+  background: #3556e0;
+}

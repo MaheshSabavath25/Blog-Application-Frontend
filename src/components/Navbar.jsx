@@ -1,12 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import { Link, useNavigate } from "react-router-dom";
+import { FaMoon, FaSignOutAlt, FaPenNib } from "react-icons/fa";
 import "../styles/navbar.css";
-
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { dark, setDark } = useContext(ThemeContext);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -14,21 +11,32 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
-      <div className="nav-left">
-        <button onClick={() => navigate("/posts")}>All Posts</button>
-        <button onClick={() => navigate("/myposts")}>My Posts</button>
-        <button onClick={() => navigate("/create")}>Create</button>
-        
+    <nav className="navbar">
+
+      {/* LEFT - LOGO */}
+      <div className="nav-logo">
+        <FaPenNib className="logo-icon" />
+        <span>BlogApp</span>
       </div>
 
-      <div className="nav-right">
-        <button onClick={() => setDark(!dark)}>
-          {dark ? "☀️ Light" : "🌙 Dark"}
-        </button>
-        <button onClick={logout}>Logout</button>
+      {/* CENTER - LINKS */}
+      <div className="nav-links">
+        <Link to="/allposts">All Posts</Link>
+        <Link to="/myposts">My Posts</Link>
+        <Link to="/create">Create</Link>
       </div>
-    </div>
+
+      {/* RIGHT - ACTIONS */}
+      <div className="nav-actions">
+        <FaMoon className="nav-icon" title="Toggle Theme" />
+        <FaSignOutAlt
+          className="nav-icon logout"
+          title="Logout"
+          onClick={logout}
+        />
+      </div>
+
+    </nav>
   );
 };
 

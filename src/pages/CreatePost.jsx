@@ -119,11 +119,20 @@ const CreatePost = () => {
         />
       )}
 
-      <input
-        type="file"
-        className="cp-file"
-        onChange={(e) => setImage(e.target.files[0])}
-      />
+      <div className="file-upload">
+  <label htmlFor="fileInput" className="custom-file-btn">
+    {image ? "Image Selected ✓" : "Upload Image"}
+  </label>
+
+  <input
+    id="fileInput"
+    type="file"
+    accept="image/*"
+    onChange={(e) => setImage(e.target.files[0])}
+    hidden
+  />
+</div>
+
 
       <button className="cp-button" onClick={createPost}>
         Create Post
