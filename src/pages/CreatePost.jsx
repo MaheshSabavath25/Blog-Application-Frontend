@@ -13,6 +13,8 @@ const CreatePost = () => {
 
   const [newCategory, setNewCategory] = useState(""); // ✅ NEW
   const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+
 
   const navigate = useNavigate();
 
@@ -23,56 +25,58 @@ const CreatePost = () => {
       .catch(() => alert("Failed to load categories"));
   }, []);
 
-  /* ================= CREATE POST ================= */
   const createPost = async () => {
-    if (!title || !content || !categoryId) {
-      return alert("All fields are required");
-    }
+  if (!title || !content || !categoryId) {
+    return alert("All fields are required");
+  }
 
-    try {
-      let finalCategoryId = categoryId;
+  try {
+    setLoading(true);
 
-      // ✅ CREATE CATEGORY IF USER CHOOSES "NEW"
-      if (categoryId === "new") {
-        if (!newCategory.trim()) {
-          return alert("Please enter category name");
-        }
+    let finalCategoryId = categoryId;
 
-        const categoryRes = await API.post("/api/categories", {
-          categoryTitle: newCategory,
-          categoryDescription: ""
-        });
-
-        finalCategoryId = categoryRes.data.id;
+    if (categoryId === "new") {
+      if (!newCategory.trim()) {
+        setLoading(false);
+        return alert("Please enter category name");
       }
 
-      // ✅ CREATE POST
-      const postRes = await API.post(
-        `/api/posts/category/${finalCategoryId}`,
-        { title, content }
+      const categoryRes = await API.post("/api/categories", {
+        categoryTitle: newCategory,
+        categoryDescription: ""
+      });
+
+      finalCategoryId = categoryRes.data.id;
+    }
+
+    const postRes = await API.post(
+      `/api/posts/category/${finalCategoryId}`,
+      { title, content }
+    );
+
+    const postId = postRes.data.id;
+
+    if (image) {
+      const formData = new FormData();
+      formData.append("image", image);
+
+      await API.post(
+        `/api/posts/${postId}/image`,
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
       );
-
-      const postId = postRes.data.id;
-
-      // ✅ IMAGE UPLOAD
-      if (image) {
-        const formData = new FormData();
-        formData.append("image", image);
-
-        await API.post(
-          `/api/posts/${postId}/image`,
-          formData,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-      }
-
-      alert("Post created successfully ✅");
-      navigate("/myposts");
-
-    } catch (err) {
-      alert("Failed to create post ❌");
     }
-  };
+
+    alert("Post created successfully ✅");
+    navigate("/myposts");
+
+  } catch {
+    alert("Failed to create post ❌");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="create-post">
@@ -119,24 +123,41 @@ const CreatePost = () => {
         />
       )}
 
-      <div className="file-upload">
-  <label htmlFor="fileInput" className="custom-file-btn">
-    {image ? "Image Selected ✓" : "Upload Image"}
-  </label>
+      {/* FILE UPLOAD */}
+<input
+  id="fileInput"
+  type="file"
+  accept="image/*"
+  onChange={(e) => setImage(e.target.files[0])}
+  hidden
+/>
 
-  <input
-    id="fileInput"
-    type="file"
-    accept="image/*"
-    onChange={(e) => setImage(e.target.files[0])}
-    hidden
-  />
+<div className="post-actions">
+ <button
+  type="button"
+  className="upload-btn"
+  onClick={() => document.getElementById("fileInput").click()}
+  disabled={loading}
+>
+  {image ? "Image Selected ✓" : "Upload Image"}
+</button>
+
+
+  <button
+  type="button"
+  className="create-btn"
+  onClick={createPost}
+  disabled={loading}
+>
+  {loading ? "Creating..." : "Create Post"}
+</button>
+
 </div>
 
 
-      <button className="cp-button" onClick={createPost}>
-        Create Post
-      </button>
+
+
+      
     </div>
   );
 };
