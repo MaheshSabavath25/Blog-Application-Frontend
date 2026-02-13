@@ -1,83 +1,41 @@
-/* ================= NAVBAR ================= */
+/* ===== INSTAGRAM STYLE MOBILE NAV ===== */
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 32px;
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
   background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* ===== LOGO ===== */
-
-.nav-logo {
+  border-top: 1px solid #dbdbdb;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  gap: 8px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #222;
+  z-index: 1000;
 }
 
-.logo-icon {
-  font-size: 22px;
-  color: #4f46e5;
-}
-
-/* ===== CENTER LINKS ===== */
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  transition: 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: #4f46e5;
-}
-
-/* ===== RIGHT ACTION ICONS ===== */
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-icon {
-  font-size: 18px;
+.mobile-item {
+  color: #8e8e8e;
   cursor: pointer;
-  color: #444;
   transition: 0.2s ease;
 }
 
-.nav-icon:hover {
-  color: #4f46e5;
+.mobile-item:hover {
+  color: #000;
 }
 
-.logout:hover {
-  color: #ef4444;
+.mobile-item.active {
+  color: #000;
 }
 
-/* ================= RESPONSIVE ================= */
+/* Logout red */
+.mobile-item.logout:hover {
+  color: #ed4956;
+}
 
-/* Hide mobile nav on desktop */
+/* Hide on desktop */
 @media (min-width: 768px) {
   .mobile-nav {
-    display: none;
-  }
-}
-
-/* Hide top navbar on mobile */
-@media (max-width: 767px) {
-  .navbar {
     display: none;
   }
 }
