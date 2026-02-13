@@ -14,21 +14,29 @@
   z-index: 1000;
 }
 
+/* Each icon */
 .mobile-item {
+  font-size: 22px;
   color: #8e8e8e;
   cursor: pointer;
   transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Active icon */
+.mobile-item.active {
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Hover */
 .mobile-item:hover {
   color: #000;
 }
 
-.mobile-item.active {
-  color: #000;
-}
-
-/* Logout red */
+/* Logout special color */
 .mobile-item.logout:hover {
   color: #ed4956;
 }
@@ -38,4 +46,12 @@
   .mobile-nav {
     display: none;
   }
+}
+
+
+.mobile-item.active {
+  color: #000;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  border-radius: 50%;
 }
