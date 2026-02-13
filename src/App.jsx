@@ -11,7 +11,7 @@ import EditPost from "./pages/EditPost";
 import PostDetails from "./pages/PostDetails";
 import MyComments from "./pages/MyComments";
 import TagPosts from "./pages/TagPosts";
-import "./styles/theme.css";
+
 
 
 
