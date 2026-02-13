@@ -14,7 +14,7 @@
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Items */
+/* ===== NAV ITEMS ===== */
 .mobile-item {
   font-size: 22px;
   cursor: pointer;
@@ -25,13 +25,11 @@
   justify-content: center;
 }
 
-/* Hover effect */
 .mobile-item:hover {
   color: #4f46e5;
   transform: scale(1.1);
 }
 
-/* Active state */
 .mobile-item.active {
   color: #4f46e5;
   background: rgba(79, 70, 229, 0.1);
@@ -39,25 +37,25 @@
   border-radius: 50%;
 }
 
-/* Logout red */
 .mobile-item.logout:hover {
   color: #ef4444;
 }
 
-/* Hide mobile nav on desktop */
-@media (min-width: 768px) {
-  .mobile-nav {
-    display: none;
-  }
-}
-
-/* Hide top navbar on mobile */
+/* ===== PAGE FIX (IMPORTANT) ===== */
+/* Only add bottom padding on mobile */
 @media (max-width: 768px) {
   .navbar {
     display: none;
   }
 
   .page {
-    padding-bottom: 70px; /* Prevent content hidden behind nav */
+    padding-bottom: 80px; /* prevents mobile nav covering content */
+  }
+}
+
+/* Hide mobile nav on desktop */
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
   }
 }

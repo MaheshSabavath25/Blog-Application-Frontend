@@ -50,10 +50,13 @@
 
 .post-actions {
   display: flex;
+  align-items: center;
   gap: 20px;
   padding: 14px 18px;
-  font-size: 15px;
 }
+
+
+
 
 .post-actions span {
   display: flex;
@@ -122,9 +125,7 @@
   transition: opacity 0.2s ease;
 }
 
-.comment:hover .hover-actions {
-  opacity: 1;
-}
+
 
 .hover-actions svg {
   margin-left: 10px;
