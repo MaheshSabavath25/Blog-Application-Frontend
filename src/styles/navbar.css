@@ -29,7 +29,11 @@
 .mobile-item.active {
   color: #000;
   transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  border-radius: 50%;
 }
+
 
 /* Hover */
 .mobile-item:hover {
@@ -49,9 +53,84 @@
 }
 
 
-.mobile-item.active {
-  color: #000;
-  background: rgba(0, 0, 0, 0.08);
-  padding: 8px;
-  border-radius: 50%;
+
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== LOGO ===== */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.logo-icon {
+  font-size: 20px;
+  color: #4f46e5;
+}
+
+/* ===== CENTER LINKS ===== */
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #4f46e5;
+}
+
+/* ===== RIGHT SIDE ICONS ===== */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: #444;
+  transition: 0.2s ease;
+}
+
+.nav-icon:hover {
+  color: #4f46e5;
+}
+
+.logout:hover {
+  color: #ef4444;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* hidden on mobile */
+  }
 }
