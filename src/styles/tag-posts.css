@@ -30,11 +30,16 @@
 /* ===== IMAGE ===== */
 .tag-post-image {
   width: 100%;
-  height: 220px;
+  height: 260px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
 }
+
+video.tag-post-image {
+  background: #000;
+}
+
 
 /* ===== BACK BUTTON INSIDE IMAGE ===== */
 .back-btn {

@@ -39,22 +39,31 @@ const TagPosts = () => {
       {posts.map((post) => (
         <div key={post.id} className="tag-post-card">
 
-          {post.imageName && (
-            <div className="image-wrapper">
-              <button
-                className="back-btn"
-                onClick={() => navigate(-1)}
-              >
-                ←
-              </button>
+         {(post.videoUrl || post.imageName) && (
+  <div className="image-wrapper">
+    <button
+      className="back-btn"
+      onClick={() => navigate(-1)}
+    >
+      ←
+    </button>
 
-              <img
-                src={post.imageName}
-                alt="post"
-                className="tag-post-image"
-              />
-            </div>
-          )}
+    {post.videoUrl ? (
+      <video
+        className="tag-post-image"
+        src={post.videoUrl}
+        controls
+      />
+    ) : (
+      <img
+        src={post.imageName}
+        alt="post"
+        className="tag-post-image"
+      />
+    )}
+  </div>
+)}
+
 
           <h3>{post.title}</h3>
 

@@ -44,6 +44,7 @@
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
+  z-index: 999; 
 }
 
 /* ================= ACTIONS ================= */
@@ -308,6 +309,7 @@
 .image-wrapper img,
 .image-wrapper video {
   border-radius: 0;
+  z-index: 1; 
 }
 
 /* ================= MOBILE OPTIMIZATION ================= */
