@@ -79,16 +79,21 @@ body {
 }
 
 .view-btn {
-  display: inline-block;
   margin-top: 12px;
   padding: 8px 16px;
-  border: none;
   border-radius: 6px;
-  background: #4f46e5;
+  border: none;
+  background: #4f46e5;   /* solid visible color */
   color: white;
   cursor: pointer;
   font-weight: 500;
+  display: inline-block;
 }
+
+.view-btn:hover {
+  background: #4338ca;
+}
+
 
 
 
@@ -109,9 +114,8 @@ body {
 .feed-container {
   max-width: 640px;
   margin: 0 auto;
-  padding: 20px 12px 100px; /* 👈 add bottom padding here */
+  padding: 20px 12px 140px;   /* increase bottom padding */
 }
 
-.view-btn {
-  background: red;
-}
+
+

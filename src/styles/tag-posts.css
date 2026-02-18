@@ -62,16 +62,18 @@
 .view-btn {
   margin-top: 12px;
   padding: 8px 14px;
-  background: var(--accent);
+  background: #4f46e5;   /* solid color */
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
+
 .view-btn:hover {
-  background: var(--accent-hover);
+  background: #4338ca;
 }
+
 
 /* ===== EMPTY TEXT ===== */
 .empty {
