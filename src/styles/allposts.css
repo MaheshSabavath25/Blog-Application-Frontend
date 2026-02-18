@@ -37,9 +37,13 @@ body {
   background: white;
   border-radius: 14px;
   margin-bottom: 28px;
-  overflow: hidden;
+  overflow: visible;   /* ✅ FIX */
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
 }
+
+
+
+
 
 .post-header {
   padding: 14px 16px;
@@ -58,9 +62,10 @@ body {
   display: block;
 }
 
-/* ===== BODY ===== */
 .post-body {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .post-body h4 {
@@ -107,3 +112,6 @@ body {
   padding: 20px 12px 100px; /* 👈 add bottom padding here */
 }
 
+.view-btn {
+  background: red;
+}
