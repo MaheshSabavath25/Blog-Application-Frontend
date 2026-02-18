@@ -51,15 +51,15 @@
 /* ================= ACTIONS ================= */
 
 .post-actions {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 50px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;   /* LEFT SIDE */
+  gap: 20px;
   padding: 14px 18px;
   font-size: 18px;
-  width: 100%;
 }
+
 
 .post-actions span {
   display: inline-flex !important;
