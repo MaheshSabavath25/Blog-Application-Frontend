@@ -62,13 +62,21 @@ const MyPosts = () => {
         {posts.map((post) => (
           <div className="grid-post" key={post.id}>
 
-            {/* 🖼 IMAGE */}
-            <img
-              src={post.imageName}
+           {/* 🖼 IMAGE OR 🎥 VIDEO */}
+{post.videoUrl ? (
+  <video
+    src={post.videoUrl}
+    onClick={() => navigate(`/posts/${post.id}`)}
+    controls
+  />
+) : post.imageName ? (
+  <img
+    src={post.imageName}
+    alt="post"
+    onClick={() => navigate(`/posts/${post.id}`)}
+  />
+) : null}
 
-              alt="post"
-              onClick={() => navigate(`/posts/${post.id}`)}
-            />
 
             {/* ⋮ MENU */}
             <div
