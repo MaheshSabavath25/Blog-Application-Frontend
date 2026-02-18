@@ -2,7 +2,7 @@
 
 .post-page {
   display: flex;
-  justify-content: center;
+   justify-content: flex-start; 
   padding: 24px 12px;
   background: #f5f6fa;
   min-height: 100vh;

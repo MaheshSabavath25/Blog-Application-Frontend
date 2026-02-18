@@ -59,3 +59,8 @@
     display: none;
   }
 }
+
+
+.page {
+  padding-bottom: 70px;  /* exactly nav height + little gap */
+}

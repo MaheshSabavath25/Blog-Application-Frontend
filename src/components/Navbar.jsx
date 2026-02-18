@@ -28,7 +28,7 @@ const Navbar = () => {
 
       {/* RIGHT - ACTIONS */}
       <div className="nav-actions">
-        <FaMoon className="nav-icon" title="Toggle Theme" />
+        
         <FaSignOutAlt
           className="nav-icon logout"
           title="Logout"
