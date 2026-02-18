@@ -190,13 +190,19 @@ const PostDetails = () => {
 
         <div className="image-wrapper">
           <button className="back-btn" onClick={() => window.history.back()}>←</button>
-          {post.imageName && (
-            <img
-              src={post.imageName}
+          {post.videoUrl ? (
+  <video
+    src={post.videoUrl}
+    controls
+    style={{ width: "100%" }}
+  />
+) : post.imageName ? (
+  <img
+    src={post.imageName}
+    alt="post"
+  />
+) : null}
 
-              alt="post"
-            />
-          )}
         </div>
 
         <div className="post-actions">

@@ -292,3 +292,28 @@
   color: #999;
   margin-top: 2px;
 }
+
+
+/* ================= VIDEO STYLE ================= */
+
+.image-wrapper video {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+/* Keep image & video consistent */
+.image-wrapper img,
+.image-wrapper video {
+  border-radius: 0;
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media (max-width: 600px) {
+  .image-wrapper video {
+    max-height: 350px;
+  }
+}

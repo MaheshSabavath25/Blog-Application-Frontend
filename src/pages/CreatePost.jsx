@@ -57,15 +57,28 @@ const CreatePost = () => {
     const postId = postRes.data.id;
 
     if (image) {
-      const formData = new FormData();
-      formData.append("image", image);
+  const formData = new FormData();
 
-      await API.post(
-        `/api/posts/${postId}/image`,
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
-      );
-    }
+  if (image.type.startsWith("video")) {
+    formData.append("video", image);
+
+    await API.post(
+      `/api/posts/${postId}/video`,
+      formData,
+      { headers: { "Content-Type": "multipart/form-data" } }
+    );
+
+  } else {
+    formData.append("image", image);
+
+    await API.post(
+      `/api/posts/${postId}/image`,
+      formData,
+      { headers: { "Content-Type": "multipart/form-data" } }
+    );
+  }
+}
+
 
     alert("Post created successfully ✅");
     navigate("/myposts");
@@ -127,7 +140,7 @@ const CreatePost = () => {
 <input
   id="fileInput"
   type="file"
-  accept="image/*"
+  accept="image/*,video/*"
   onChange={(e) => setImage(e.target.files[0])}
   hidden
 />

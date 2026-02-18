@@ -110,15 +110,23 @@ const AllPosts = () => {
             {post.user?.name || "Unknown User"}
           </div>
 
-          {post.imageName && (
-            <div className="post-image">
-              <img
-                src={post.imageName}
+          {post.videoUrl ? (
+  <div className="post-image">
+    <video
+      src={post.videoUrl}
+      controls
+      style={{ width: "100%" }}
+    />
+  </div>
+) : post.imageName ? (
+  <div className="post-image">
+    <img
+      src={post.imageName}
+      alt="post"
+    />
+  </div>
+) : null}
 
-                alt="post"
-              />
-            </div>
-          )}
 
           <div className="post-body">
             <h4>{post.title}</h4>
