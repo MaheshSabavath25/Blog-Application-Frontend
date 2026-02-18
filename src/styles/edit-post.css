@@ -17,19 +17,24 @@
 
 /* ===== IMAGE WRAPPER ===== */
 .image-wrapper {
-  position: relative;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== IMAGE ===== */
 .edit-post-image {
   width: 100%;
   height: 240px;
-  object-fit: cover;
   border-radius: 12px;
   display: block;
 }
+
+video.edit-post-image {
+  background: #000;
+}
+
 
 /* ===== BACK BUTTON (ON IMAGE) ===== */
 .back-btn {
@@ -65,21 +70,35 @@
 
 /* ===== FILE INPUT ===== */
 .ep-file {
-  margin-bottom: 10px;
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
 }
+
 
 /* ===== BUTTON ===== */
 .ep-btn {
   padding: 8px 16px;
-  background: var(--accent);
+  background: #6c63ff;
+
   color: #fff;
   border: none;
   cursor: pointer;
   margin-bottom: 18px;
+   border-radius: 6px;
+  transition: 0.2s ease;
+    display: inline-block;
+    position: relative;
+  z-index: 2;
 }
 
 .ep-btn:hover {
-  background: var(--accent-hover);
+  background: #5848e5;
+
+}
+
+.ep-btn:active {
+  transform: scale(0.98);
 }
 
 /* ===== HR ===== */
@@ -91,11 +110,27 @@
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  .edit-post {
-    padding: 18px 14px;
+  video.edit-post-image,
+  .edit-post-image {
+    height: 200px;
   }
 
   .edit-post h2 {
     font-size: 20px;
   }
 }
+
+
+/* ===== VIDEO (Same as Image) ===== */
+/* ===== VIDEO (Same as Image) ===== */
+video.edit-post-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #000;
+  display: block;
+}
+
+
+

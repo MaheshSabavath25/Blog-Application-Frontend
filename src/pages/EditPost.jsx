@@ -13,6 +13,10 @@ const EditPost = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [videoUrl, setVideoUrl] = useState(null);
+const [video, setVideo] = useState(null);
+
+
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -20,6 +24,8 @@ const EditPost = () => {
         setTitle(res.data.title);
         setContent(res.data.content);
         setImageName(res.data.imageName);
+setVideoUrl(res.data.videoUrl);
+
       } catch {
         alert("Failed to load post");
       } finally {
@@ -44,22 +50,32 @@ const EditPost = () => {
     }
   };
 
-  const updateImage = async () => {
-    if (!image) return alert("Please select an image");
+  const updateMedia = async () => {
+  if (!image && !video)
+    return alert("Please select image or video");
 
-    const formData = new FormData();
-    formData.append("image", image);
+  const formData = new FormData();
 
-    try {
+  try {
+    if (video) {
+      formData.append("video", video);
+      await API.post(`/api/posts/${postId}/video`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+    } else {
+      formData.append("image", image);
       await API.post(`/api/posts/${postId}/image`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      alert("Image updated successfully ✅");
-      window.location.reload();
-    } catch {
-      alert("Failed to update image ❌");
     }
-  };
+
+    alert("Media updated successfully ✅");
+    window.location.reload();
+  } catch {
+    alert("Failed to update media ❌");
+  }
+};
+
 
   if (loading) return <p>Loading...</p>;
 
@@ -67,7 +83,7 @@ const EditPost = () => {
     <div className="edit-post">
       <h2>Edit Post</h2>
 
-{imageName && (
+{(imageName || videoUrl) && (
   <div className="image-wrapper">
     <button
       className="back-btn"
@@ -76,25 +92,48 @@ const EditPost = () => {
       ←
     </button>
 
-    <img
-      className="edit-post-image"
-      src={imageName}
-      alt="post"
-    />
+    {videoUrl ? (
+      <video
+        className="edit-post-image"
+        src={videoUrl}
+        controls
+      />
+    ) : (
+      <img
+        className="edit-post-image"
+        src={imageName}
+        alt="post"
+      />
+    )}
   </div>
 )}
 
 
+
       <input
         type="file"
-        accept="image/*"
+        accept="image/*,video/*"
+
         className="ep-file"
-        onChange={(e) => setImage(e.target.files[0])}
+        onChange={(e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  if (file.type.startsWith("video")) {
+    setVideo(file);
+    setImage(null);
+  } else {
+    setImage(file);
+    setVideo(null);
+  }
+}}
+
       />
 
-      <button className="ep-btn" onClick={updateImage}>
-        Update Image
-      </button>
+      <button className="ep-btn" onClick={updateMedia}>
+  Update Media
+</button>
+
 
       <hr />
 

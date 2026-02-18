@@ -152,7 +152,7 @@ const CreatePost = () => {
   onClick={() => document.getElementById("fileInput").click()}
   disabled={loading}
 >
-  {image ? "Image Selected ✓" : "Upload Image"}
+  {image ? "Image Selected ✓" : "Upload Post"}
 </button>
 
 
