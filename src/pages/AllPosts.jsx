@@ -122,11 +122,14 @@ const AllPosts = () => {
 
           <div className="post-body">
             <h4>{post.title}</h4>
-            <p>
-  {post.content && post.content.length > 120
-    ? post.content.substring(0, 120) + "..."
-    : post.content}
+    <p>
+  {post.content
+    ? post.content.length > 120
+      ? post.content.substring(0, 120) + "..."
+      : post.content
+    : ""}
 </p>
+
 
 
             <button
