@@ -112,13 +112,13 @@ const AllPosts = () => {
 
           {post.videoUrl ? (
   <div className="post-image">
-    <video
-      src={post.videoUrl}
-      controls
-      style={{ width: "100%" }}
-    />
+    <video controls width="100%">
+      <source src={post.videoUrl} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 ) : post.imageName ? (
+
   <div className="post-image">
     <img
       src={post.imageName}
