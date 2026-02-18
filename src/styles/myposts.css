@@ -52,7 +52,7 @@
 .grid-post {
   position: relative;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -69,16 +69,14 @@
 /* ================= IMAGE ================= */
 
 .grid-post {
-  aspect-ratio: 1 / 1;          /* 🔥 square like Instagram */
+  position: relative;
+  aspect-ratio: 1 / 1;   /* square */
   overflow: hidden;
+  border-radius: 18px;
 }
 
-.grid-post img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;            /* 🔥 fills card perfectly */
-  display: block;
-}
+
+
 
 
 /* ================= MENU BUTTON ================= */
@@ -155,7 +153,12 @@
     gap: 14px;
   }
 
-  .grid-post img {
-    height: 180px;
-  }
+ .grid-post img,
+.grid-post video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills square */
+  display: block;
+}
+
 }

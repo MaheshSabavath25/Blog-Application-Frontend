@@ -65,10 +65,13 @@ const MyPosts = () => {
            {/* 🖼 IMAGE OR 🎥 VIDEO */}
 {post.videoUrl ? (
   <video
-    src={post.videoUrl}
-    onClick={() => navigate(`/posts/${post.id}`)}
-    controls
-  />
+  src={post.videoUrl}
+  muted
+  playsInline
+  preload="metadata"
+  onClick={() => navigate(`/posts/${post.id}`)}
+/>
+
 ) : post.imageName ? (
   <img
     src={post.imageName}
