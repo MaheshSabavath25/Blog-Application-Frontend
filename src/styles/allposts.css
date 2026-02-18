@@ -74,12 +74,16 @@ body {
 }
 
 .view-btn {
-  background: none;
+  margin-top: 14px;
+  padding: 8px 14px;
   border: none;
-  color: #2563eb;
-  font-weight: 500;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: white;
   cursor: pointer;
+  display: inline-block;
 }
+
 
 /* ===== PAGINATION ===== */
 .pagination {
@@ -95,3 +99,9 @@ body {
   color: #666;
   font-size: 14px;
 }
+.feed-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 12px 100px; /* 👈 add bottom padding here */
+}
+
