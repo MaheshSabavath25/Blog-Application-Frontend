@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
+
 import API from "../api/api";
 import "../styles/create-post.css";
 
@@ -91,6 +93,30 @@ const CreatePost = () => {
 };
 
 
+const deleteCategory = async (id) => {
+  if (!window.confirm("Delete this category?")) return;
+
+  try {
+    await API.delete(`/api/categories/${id}`);
+
+    setCategories(prev => prev.filter(cat => cat.id !== id));
+
+    if (categoryId === id) {
+      setCategoryId("");
+    }
+
+    alert("Category deleted successfully ✅");
+
+  } catch (error) {
+    if (error.response && error.response.data) {
+      alert(error.response.data);
+    } else {
+      alert("Cannot delete category ❌");
+    }
+  }
+};
+
+
   return (
     <div className="create-post">
       <h2>Create Post</h2>
@@ -109,6 +135,8 @@ const CreatePost = () => {
         onChange={(e) => setContent(e.target.value)}
       />
 
+      
+
       {/* ================= CATEGORY ================= */}
       <select
         className="cp-input"
@@ -125,6 +153,25 @@ const CreatePost = () => {
 
         <option value="new">➕ Add new category</option>
       </select>
+
+
+      {/* CATEGORY DELETE LIST */}
+<div className="category-list">
+  {categories.map(cat => (
+    <div key={cat.id} className="category-item">
+      {cat.categoryTitle}
+
+      <span
+  className="delete-icon"
+  onClick={() => deleteCategory(cat.id)}
+>
+  <FaTrash />
+</span>
+
+
+    </div>
+  ))}
+</div>
 
       {/* ================= NEW CATEGORY INPUT ================= */}
       {categoryId === "new" && (

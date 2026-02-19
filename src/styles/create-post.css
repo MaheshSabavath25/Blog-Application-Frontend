@@ -109,3 +109,45 @@
   border: 1px solid var(--border-color);
   margin-top: 10px;
 }
+
+
+.category-list {
+  margin-top: 12px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: #f9fafb;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.category-item:hover {
+  background: #f3f4f6;
+}
+
+.delete-icon {
+  cursor: pointer;
+  opacity: 0;
+  color: #dc2626;
+  transition: 0.2s ease;
+}
+
+.category-item:hover .delete-icon {
+  opacity: 1;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.delete-icon svg {
+  font-size: 14px;
+}
