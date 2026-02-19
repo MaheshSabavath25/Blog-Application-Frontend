@@ -120,8 +120,13 @@ const PostDetails = () => {
       : setReplyText(p => p + emojiData.emoji);
   };
 
-  const renderComment = (c, isReply = false) => (
-    <div key={c.id} className={`comment ${isReply ? "reply" : ""}`}>
+  const renderComment = (c, depth = 0) => (
+    <div
+  key={c.id}
+  className="comment"
+  style={{ marginLeft: depth * 20 }}
+>
+
       <div className="comment-header">
   <div className="comment-user">
     <b>{c.userName}</b>
@@ -153,11 +158,10 @@ const PostDetails = () => {
           {c.liked ? <FaHeart className="liked" /> : <FaRegHeart />} {c.likes}
         </span>
 
-        {!isReply && (
-          <span onClick={() => setReplyTo(p => (p === c.id ? null : c.id))}>
-            Reply
-          </span>
-        )}
+        <span onClick={() => setReplyTo(p => (p === c.id ? null : c.id))}>
+  Reply {c.replies?.length > 0 && `(${c.replies.length})`}
+</span>
+
       </div>
 
       {replyTo === c.id && (
@@ -178,7 +182,8 @@ const PostDetails = () => {
         </div>
       )}
 
-      {c.replies?.map(r => renderComment(r, true))}
+      {c.replies?.map(r => renderComment(r, depth + 1))}
+
     </div>
   );
 

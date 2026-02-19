@@ -319,3 +319,19 @@
     max-height: 350px;
   }
 }
+
+
+.comment {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.comment-actions span {
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.liked {
+  color: #e11d48;
+}
