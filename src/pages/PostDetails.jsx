@@ -192,11 +192,25 @@ const PostDetails = () => {
           <button className="back-btn" onClick={() => window.history.back()}>←</button>
           {post.videoUrl ? (
   <video
-    src={post.videoUrl}
     controls
+    playsInline
+    preload="auto"
+    poster={post.videoUrl
+      .replace("/upload/", "/upload/so_0/")
+      .replace(".mp4", ".jpg")}
     style={{ width: "100%" }}
-  />
-) : post.imageName ? (
+  >
+    <source
+      src={post.videoUrl.replace(
+        "/upload/",
+        "/upload/f_mp4,vc_h264/"
+      )}
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+)
+ : post.imageName ? (
   <img
     src={post.imageName}
     alt="post"

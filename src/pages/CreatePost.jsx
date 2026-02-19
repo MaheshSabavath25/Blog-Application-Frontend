@@ -152,7 +152,12 @@ const CreatePost = () => {
   onClick={() => document.getElementById("fileInput").click()}
   disabled={loading}
 >
-  {image ? "Image Selected ✓" : "Upload Post"}
+  {image
+  ? image.type.startsWith("video")
+    ? "Video Selected ✓"
+    : "Image Selected ✓"
+  : "Upload Media"}
+
 </button>
 
 

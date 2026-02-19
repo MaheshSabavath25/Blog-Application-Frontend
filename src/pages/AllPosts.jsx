@@ -112,12 +112,27 @@ const AllPosts = () => {
 
           {post.videoUrl ? (
   <div className="post-image">
-    <video controls width="100%">
-      <source src={post.videoUrl} type="video/mp4" />
+    <video
+      controls
+      playsInline
+      preload="auto"
+      poster={post.videoUrl
+        .replace("/upload/", "/upload/so_0/")
+        .replace(".mp4", ".jpg")}
+      width="100%"
+    >
+      <source
+        src={post.videoUrl.replace(
+          "/upload/",
+          "/upload/f_mp4,vc_h264/"
+        )}
+        type="video/mp4"
+      />
       Your browser does not support the video tag.
     </video>
   </div>
 ) : post.imageName ? (
+
 
   <div className="post-image">
     <img

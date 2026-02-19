@@ -94,10 +94,24 @@ setVideoUrl(res.data.videoUrl);
 
     {videoUrl ? (
       <video
-        className="edit-post-image"
-        src={videoUrl}
-        controls
-      />
+  className="edit-post-image"
+  controls
+  playsInline
+  preload="auto"
+  poster={videoUrl
+    ?.replace("/upload/", "/upload/so_0/")
+    ?.replace(".mp4", ".jpg")}
+>
+  <source
+    src={videoUrl?.replace(
+      "/upload/",
+      "/upload/f_mp4,vc_h264/"
+    )}
+    type="video/mp4"
+  />
+  Your browser does not support the video tag.
+</video>
+
     ) : (
       <img
         className="edit-post-image"
